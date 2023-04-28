@@ -19,7 +19,7 @@ sudo firewall-cmd --reload
 
 # Configure Database
 
-$ mysql
+cat > configure-db.sql <<-EOF
 CREATE DATABASE ecomdb;
 CREATE USER 'ecomuser'@'localhost' IDENTIFIED BY 'ecompassword';
 GRANT ALL PRIVILEGES ON *.* TO 'ecomuser'@'localhost';
@@ -27,6 +27,7 @@ FLUSH PRIVILEGES;
 show databases;
 use ecomdb;
 show tables;
+EOF
 
 # ON a multi-node setup remember to provide the IP address of the web server here: 'ecomuser'@'web-server-ip'
 
