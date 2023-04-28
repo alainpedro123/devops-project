@@ -9,7 +9,6 @@ sudo systemctl enable firewalld
 ## Deploy and Configure Database
 # Install MariaDB
 sudo yum install -y mariadb-server
-sudo vi /etc/my.cnf
 sudo service mariadb start
 sudo systemctl enable mariadb
 
